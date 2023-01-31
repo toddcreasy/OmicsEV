@@ -139,8 +139,11 @@ run_omics_evaluation=function(data_dir=NULL,
         basic_metrics_res <- readRDS(basic_metrics_res_file)
         res$basic_metrics <- basic_metrics_res
     }else{
+        print("HERE1.")
         basic_metrics_res <- calc_basic_metrics(x1,class_color=class_color,out_dir=out_dir,cpu=cpu)
+        print(str(basic_metrics_res))
         saveRDS(basic_metrics_res,file = basic_metrics_res_file)
+        print("DONE!")
         res$basic_metrics <- basic_metrics_res
     }
 
