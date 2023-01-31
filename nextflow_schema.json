@@ -24,7 +24,7 @@
                 "data_dir": {
                     "type": "string",
                     "format": "directory-path",
-                    "fa_icon": "directory-path",
+                    "fa_icon": "directory-path"
                 },
                 "sample_list": {
                     "type": "string",
