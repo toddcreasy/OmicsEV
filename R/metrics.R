@@ -692,11 +692,16 @@ calc_basic_metrics=function(x,class_color=NULL,out_dir="./",cpu=0){
     cat("Use cpu:",cpu,"\n")
 
     if(cpu > 1){
+        print("MAKE CLUSTER:")
         cl <- makeCluster(getOption("cl.cores", cpu))
+        print("cl:")
+        print(str(cl))
         clusterExport(cl, c("metaXpipe"),envir=environment())
-
-
+        print("done.")
+        print("parLapply:")
         res <- parLapply(cl,xx,fun = run_basic_metrics,plist=plist,out_dir=out_dir)
+        print("RES:")
+        print(str(res))
         stopCluster(cl)
     }else{
         res <- lapply(xx,run_basic_metrics,plist=plist,out_dir=out_dir)
