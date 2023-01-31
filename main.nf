@@ -18,7 +18,7 @@ def helpMessage() {
       --use_existing_data
       --data_type        
       --class_for_ml
-      --output_dir
+      --outdir
       --help
     """.stripIndent()
 }
@@ -29,7 +29,7 @@ if (params.help) {
     exit 0
 }
 
-checkPathParamList = [params.data_dir, params.sample_list, params.x2, params.class_for_ml, params.output_dir]
+checkPathParamList = [params.data_dir, params.sample_list, params.x2, params.class_for_ml, params.outdir]
 for (param in checkPathParamList) { if (param) { file(param, checkIfExists: true) } }
 
 if (params.data_dir) { data_dir     = file(params.data_dir)  } else { exit 1, 'No directory specified with --data_dir'  }
@@ -56,10 +56,10 @@ process OMICSEV {
     val use_existing_data
     val data_type
     val class_for_ml
-    val output_dir
+    val outdir
 
     output:
-    path output_dir2
+    path outdir2
 
     script:
     """
@@ -72,11 +72,11 @@ process OMICSEV {
         --use_existing_data="${params.use_existing_data}" \\
         --data_type="${params.data_type}" \\
         --class_for_ml="$class_for_ml" \\
-        --out_dir="$output_dir"
+        --out_dir="$outdir"
     """
 
 }
 
 workflow {
-    OMICSEV(params.data_dir, params.sample_list, params.x2, params.x2_label, params.use_existing_data, params.data_type, params.class_for_ml, params.output_dir)
+    OMICSEV(params.data_dir, params.sample_list, params.x2, params.x2_label, params.use_existing_data, params.data_type, params.class_for_ml, params.outdir)
 }

@@ -18,7 +18,7 @@
                 "use_existing_data",
                 "data_type",
                 "class_for_ml",
-                "output_dir"
+                "outdir"
             ],
             "properties": {
                 "data_dir": {
