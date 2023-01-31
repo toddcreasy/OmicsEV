@@ -58,7 +58,7 @@
                     "format": "directory-path",
                     "description": "The output directory where the results will be saved",
                     "fa_icon": "fas fa-folder-open"
-                },
+                }
             }
         },
         "generic_options": {
