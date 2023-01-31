@@ -62,6 +62,8 @@ process OMICSEV {
     path outdir2
 
     script:
+    println "cpus = ${task.cpus}"
+    println "task = ${task}"
     """
     run_OmicsEV.R \\
         --data_dir="$data_dir" \\
