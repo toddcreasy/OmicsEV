@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "https://raw.githubusercontent.com/./master/nextflow_schema.json",
+    "$id": "https://raw.githubusercontent.com/toddcreasy/OmicsEV/master/nextflow_schema.json?_sm_au_=iVVFRS4T3S0s3377pGsWvKttvN1NG",
     "title": ". pipeline parameters",
     "description": "",
     "type": "object",
