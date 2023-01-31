@@ -48,9 +48,6 @@ log.info "Sample attribute will be used: $params.cli_attribute \n"
 process OMICSEV {
     label 'process_medium'
 
-    //cpus 6
-    //memory '50000 MB'
-
     input:
     val data_dir
     val sample_list
