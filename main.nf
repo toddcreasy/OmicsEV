@@ -63,7 +63,8 @@ process OMICSEV {
 
     script:
     println "cpus = ${task.cpus}"
-    println "task = ${task}"
+    println "mem  = ${task.memory}"
+    
     """
     run_OmicsEV.R \\
         --data_dir="$data_dir" \\
