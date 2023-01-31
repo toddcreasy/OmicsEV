@@ -46,7 +46,7 @@ log.info "Sample attribute will be used: $params.cli_attribute \n"
 */
 
 process OMICSEV {
-    label 'process_low'
+    label 'process_medium'
 
     input:
     val data_dir
