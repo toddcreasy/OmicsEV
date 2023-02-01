@@ -691,6 +691,8 @@ calc_basic_metrics=function(x,class_color=NULL,out_dir="./",cpu=0){
     }
     cat("Use cpu:",cpu,"\n")
 
+    print("DEBUGGING......")
+
     if(cpu > 1){
         print("MAKE CLUSTER:")
         cl <- makeCluster(getOption("cl.cores", cpu))
