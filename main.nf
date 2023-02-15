@@ -18,7 +18,6 @@ def helpMessage() {
       --use_existing_data
       --data_type        
       --class_for_ml
-      --outdir
       --help
     """.stripIndent()
 }
@@ -56,10 +55,9 @@ process OMICSEV {
     val use_existing_data
     val data_type
     val class_for_ml
-    val outdir
 
     output:
-    path outdir2
+    path outdir
 
     script:
     println "cpus    = ${task.cpus}"
@@ -74,12 +72,11 @@ process OMICSEV {
         --cpu="${task.cpus}" \\
         --use_existing_data="${params.use_existing_data}" \\
         --data_type="${params.data_type}" \\
-        --class_for_ml="$class_for_ml" \\
-        --out_dir="$outdir"
+        --class_for_ml="$class_for_ml"
     """
 
 }
 
 workflow {
-    OMICSEV(params.data_dir, params.sample_list, params.x2, params.x2_label, params.use_existing_data, params.data_type, params.class_for_ml, params.outdir)
+    OMICSEV(params.data_dir, params.sample_list, params.x2, params.x2_label, params.use_existing_data, params.data_type, params.class_for_ml)
 }
