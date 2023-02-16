@@ -45,7 +45,7 @@ log.info "Sample attribute will be used: $params.cli_attribute \n"
 */
 
 process OMICSEV {
-    label 'process_medium'
+    label 'process_high'
 
     input:
     val data_dir
@@ -55,9 +55,6 @@ process OMICSEV {
     val use_existing_data
     val data_type
     val class_for_ml
-
-    output:
-    path outdir
 
     script:
     println "cpus    = ${task.cpus}"
